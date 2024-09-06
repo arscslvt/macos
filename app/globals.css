@@ -1,29 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --accent: #007aff;
+  --accent-muted: #007bff8a;
+  --accent-foreground: #ffffff;
+
+  --foreground: theme(colors.gray.900);
+  --foreground-muted: theme(colors.gray.500);
+
+  --background: #ffffff;
+  --background-muted: #e8e8ef;
+
+  --radius: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --accent: #007aff;
+    --accent-muted: #007bff8a;
+    --accent-foreground: #ffffff;
+
+    --foreground: #000000;
+    --foreground-muted: #8e8e93;
+
+    --background: #ffffff;
+    --background-muted: #e8e8ef;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  @font-face {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/SFProDisplayRegular.otf) format("otf");
+  }
+
+  @font-face {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/SFProDisplayMedium.otf) format("otf");
+  }
+
+  @font-face {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/SFProDisplayBold.otf) format("otf");
+  }
 }
 
 @layer utilities {
