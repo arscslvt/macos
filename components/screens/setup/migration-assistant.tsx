@@ -1,13 +1,12 @@
 import React from "react";
 
-import { useSetupScreens } from "@/app/setup/page";
-
 import Text from "@/components/typography";
 import Button from "@/components/ui/button";
 import Window from "@/components/windows/window";
 
 import { HiMiniArrowDownOnSquareStack } from "react-icons/hi2";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useSetupScreens } from "@/hooks/useSetupScreens";
 
 export default function MigrationAssistant() {
   const { handleScreenNavigation } = useSetupScreens();

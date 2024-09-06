@@ -1,9 +1,9 @@
-import { useSetupScreens } from "@/app/setup/page";
 import Text from "@/components/typography";
 import Button from "@/components/ui/button";
 import ListSelector, { ListSelectorItem } from "@/components/ui/list-selector";
 import Window from "@/components/windows/window";
 import { useSettings } from "@/contexts/useSettings";
+import { useSetupScreens } from "@/hooks/useSetupScreens";
 import { IWifi, generateRandomIP } from "@/types/settings/wifi";
 import React from "react";
 import { BiSolidLockAlt } from "react-icons/bi";

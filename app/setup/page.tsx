@@ -10,29 +10,12 @@ import DataPrivacy from "@/components/screens/setup/data-privacy";
 import MigrationAssistant from "@/components/screens/setup/migration-assistant";
 import CloudAccount from "@/components/screens/setup/cloud-account";
 
-interface Screen {
-  key: string;
-  element: React.ReactElement;
-}
-
-interface ScreenNavigationHandler {
-  action: "previous" | "next" | "page";
-  id?: string;
-}
-
-interface SetupScreensContext {
-  screens: Screen[];
-  currentScreen: number;
-
-  handleScreenNavigation: (handler: ScreenNavigationHandler) => void;
-}
-
-const ScreensContext = React.createContext<SetupScreensContext>({
-  screens: [],
-  currentScreen: 0,
-
-  handleScreenNavigation: () => {},
-});
+import {
+  Screen,
+  ScreenNavigationHandler,
+  ScreensContext,
+  SetupScreensContext,
+} from "@/hooks/useSetupScreens";
 
 export default function SetupPage() {
   const screens: Screen[] = useMemo(
@@ -85,5 +68,3 @@ export default function SetupPage() {
     </ScreensContext.Provider>
   );
 }
-
-export const useSetupScreens = () => React.useContext(ScreensContext);

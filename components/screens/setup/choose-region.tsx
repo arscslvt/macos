@@ -1,11 +1,11 @@
 "use client";
 
-import { useSetupScreens } from "@/app/setup/page";
 import Text from "@/components/typography";
 import Button from "@/components/ui/button";
 import ListSelector, { ListSelectorItem } from "@/components/ui/list-selector";
 import Window from "@/components/windows/window";
 import { useSystem } from "@/contexts/useSystem";
+import { useSetupScreens } from "@/hooks/useSetupScreens";
 import countries from "@/utils/countries";
 import { GlobeEuropeAfricaIcon } from "@heroicons/react/24/outline";
 import React from "react";

@@ -1,7 +1,7 @@
-import { useSetupScreens } from "@/app/setup/page";
 import Text from "@/components/typography";
 import Button from "@/components/ui/button";
 import Window from "@/components/windows/window";
+import { useSetupScreens } from "@/hooks/useSetupScreens";
 import React from "react";
 import { BsFillPeopleFill } from "react-icons/bs";
 

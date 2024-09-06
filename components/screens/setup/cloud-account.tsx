@@ -4,10 +4,9 @@ import Text from "@/components/typography";
 import Window from "@/components/windows/window";
 import Button from "@/components/ui/button";
 
-import { useSetupScreens } from "@/app/setup/page";
-
 import { HiMiniCloud } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
+import { useSetupScreens } from "@/hooks/useSetupScreens";
 
 export default function CloudAccount() {
   const { handleScreenNavigation } = useSetupScreens();
