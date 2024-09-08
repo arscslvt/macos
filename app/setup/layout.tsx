@@ -1,17 +1,16 @@
-import { Metadata } from "next";
-import Image from "next/image";
 import React from "react";
-import background from "@/assets/images/backgrounds/macOS Sonoma.jpg";
+import { Metadata } from "next";
+
 import Toolbar, {
   ToolbarItem,
   ToolbarLeading,
   ToolbarTrailing,
 } from "@/components/toolbar";
-import { FaApple, FaBatteryHalf } from "react-icons/fa";
+import Wallpaper from "@/components/wallpaper";
+
+import { FaApple } from "react-icons/fa";
 import { IoBatteryHalfOutline } from "react-icons/io5";
 import { MdOutlineWifi } from "react-icons/md";
-import { useSettings } from "@/contexts/useSettings";
-import Wallpaper from "@/components/wallpaper";
 
 export const metadata: Metadata = {
   title: "Setup",
