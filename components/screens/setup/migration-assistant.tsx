@@ -6,7 +6,7 @@ import Window from "@/components/windows/window";
 
 import { HiMiniArrowDownOnSquareStack } from "react-icons/hi2";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useSetupScreens } from "@/hooks/useSetupScreens";
+import { useSetupScreens } from "@/hooks/setup.hook";
 
 export default function MigrationAssistant() {
   const { handleScreenNavigation } = useSetupScreens();
@@ -30,7 +30,7 @@ export default function MigrationAssistant() {
         </div>
 
         <div className="pt-6 pb-8 flex-1 flex flex-col gap-8">
-          <Text variant={"footnote"} foreground={"muted"} alignment={"center"}>
+          <Text variant={"body"} foreground={"muted"} alignment={"center"}>
             If you have information on another macOS Emulator installed on other
             browsers, you can <br />
             transfer it to this one. You can also transfer information from your
@@ -38,7 +38,7 @@ export default function MigrationAssistant() {
           </Text>
 
           <div className="flex flex-col items-center gap-4">
-            <Text variant={"callout"} foreground={"muted"}>
+            <Text variant={"body"} foreground={"muted"}>
               How do you want to transfer your information?
             </Text>
             <RadioGroup direction="vertical" defaultValue="emulator">

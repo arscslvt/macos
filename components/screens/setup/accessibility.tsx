@@ -1,7 +1,7 @@
 import Text from "@/components/typography";
 import Button from "@/components/ui/button";
 import Window from "@/components/windows/window";
-import { useSetupScreens } from "@/hooks/useSetupScreens";
+import { useSetupScreens } from "@/hooks/setup.hook";
 import React from "react";
 import { BsEar } from "react-icons/bs";
 import { LuEye } from "react-icons/lu";

@@ -1,12 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import Text from "@/components/typography";
 import Button from "@/components/ui/button";
 import Window from "@/components/windows/window";
-
-import { useSetupScreens } from "@/hooks/useSetupScreens";
 
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -27,6 +25,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { updateAccount } from "@/actions/account/update";
+import { toast } from "sonner";
+import AppIcon from "@/components/ui/icon";
+import { ToastTitle } from "@/components/ui/sonner";
+import { useSetupScreens } from "@/hooks/setup.hook";
 
 const formSchema = z.object({
   email: z.string().email().min(1, {
@@ -71,6 +73,8 @@ export default function CloudAccountCreation() {
   const [otpDialogOpen, setOtpDialogOpen] = React.useState(false);
   const [otp, setOtp] = React.useState<string | null>(null);
 
+  const [loading, setLoading] = React.useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -89,6 +93,7 @@ export default function CloudAccountCreation() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    setLoading(true);
 
     try {
       const { message } = await requestOTP({
@@ -101,12 +106,15 @@ export default function CloudAccountCreation() {
     } catch (error) {
       console.error(error);
     }
+
+    setLoading(false);
   }
 
   async function onOtpSubmit(values: z.infer<typeof otpSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    setLoading(true);
 
     try {
       const { message } = await verifyOTP({
@@ -125,11 +133,19 @@ export default function CloudAccountCreation() {
         username: form.getValues("username"),
       });
 
-      console.log("Updated: ", data);
+      handleScreenNavigation({ action: "next" });
     } catch (error) {
       console.error(error);
     }
+
+    setLoading(false);
   }
+
+  useEffect(() => {
+    toast(<ToastTitle>This is a notification</ToastTitle>, {
+      duration: 5000 * 20,
+    });
+  }, []);
 
   return (
     <Window

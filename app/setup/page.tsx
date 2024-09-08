@@ -10,16 +10,16 @@ import DataPrivacy from "@/components/screens/setup/data-privacy";
 import MigrationAssistant from "@/components/screens/setup/migration-assistant";
 import CloudAccount from "@/components/screens/setup/cloud-account";
 
+import CloudAccountCreation from "@/components/screens/setup/cloud-account-creation";
 import {
-  Screen,
   ScreenNavigationHandler,
   ScreensContext,
+  SetupScreen,
   SetupScreensContext,
-} from "@/hooks/useSetupScreens";
-import CloudAccountCreation from "@/components/screens/setup/cloud-account-creation";
+} from "@/contexts/setup.context";
 
 export default function SetupPage() {
-  const screens: Screen[] = useMemo(
+  const screens: SetupScreen[] = useMemo(
     () => [
       { key: "choose-region", element: <SetupChooseRegionScreen /> },
       { key: "accessibility", element: <SetupAccessibilityScreen /> },

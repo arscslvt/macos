@@ -3,20 +3,20 @@ import { VariantProps, cva, cx } from "class-variance-authority";
 const typographyVariant = cva("", {
   variants: {
     variant: {
-      largeTitle: "text-[34px] leading-[41px]",
-      title1: "text-[28px] leading-[34px]",
-      title2: "text-[22px] leading-[28px]",
-      title3: "text-[20px] leading-[25px]",
+      largeTitle: "text-[26px] leading-[32px]",
+      title1: "text-[22px] leading-[26px]",
+      title2: "text-[17px] leading-[22px]",
+      title3: "text-[15px] leading-[20px]",
 
-      headline: "text-[17px] font-semibold leading-[22px]",
-      subheadline: "text-[15px] leading-[16px]",
+      headline: "text-[13px] font-semibold leading-[16px]",
+      subheadline: "text-[11px] leading-[14px]",
 
-      body: "text-[15px] leading-[22px]",
-      callout: "text-[14px] leading-[21px]",
-      footnote: "text-[13px] leading-[18px]",
+      body: "text-[14px] leading-[16px]",
+      callout: "text-[12px] leading-[15px]",
+      footnote: "text-[10px] leading-[13px]",
 
-      caption1: "text-[12px] leading-[16px]",
-      caption2: "text-[11px] leading-[13px]",
+      caption1: "text-[10px] leading-[13px]",
+      caption2: "text-[10px] font-medium leading-[13px]",
     },
 
     weight: {

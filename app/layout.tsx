@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Providers from "@/contexts/Providers";
+import { Toaster } from "@/components/ui/sonner";
 
 export const viewport: Viewport = {
   userScalable: false,
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body
         className={`w-dvw h-dvh min-w-dvw min-h-dvh fixed top-0 left-0 select-none`}
       >
+        <Toaster />
         <Providers>{children}</Providers>
       </body>
     </html>

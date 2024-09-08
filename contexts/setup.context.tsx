@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface Screen {
+export interface SetupScreen {
   key: string;
   element: React.ReactElement;
   props?: Record<string, any>;
@@ -12,7 +12,7 @@ export interface ScreenNavigationHandler {
 }
 
 export interface SetupScreensContext {
-  screens: Screen[];
+  screens: SetupScreen[];
   currentScreen: number;
 
   handleScreenNavigation: (handler: ScreenNavigationHandler) => void;
@@ -24,5 +24,3 @@ export const ScreensContext = React.createContext<SetupScreensContext>({
 
   handleScreenNavigation: () => {},
 });
-
-export const useSetupScreens = () => React.useContext(ScreensContext);

@@ -6,7 +6,7 @@ import Button from "@/components/ui/button";
 
 import { HiMiniCloud } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
-import { useSetupScreens } from "@/hooks/useSetupScreens";
+import { useSetupScreens } from "@/hooks/setup.hook";
 
 export default function CloudAccount() {
   const { handleScreenNavigation } = useSetupScreens();
@@ -26,7 +26,7 @@ export default function CloudAccount() {
           </Text>
         </div>
 
-        <Text variant={"footnote"} foreground={"muted"} alignment={"center"}>
+        <Text variant={"body"} foreground={"muted"} alignment={"center"}>
           Sign in to use Cloud, App Store, and other services.
         </Text>
 

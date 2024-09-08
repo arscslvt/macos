@@ -1,7 +1,7 @@
 import Text from "@/components/typography";
 import Button from "@/components/ui/button";
 import Window from "@/components/windows/window";
-import { useSetupScreens } from "@/hooks/useSetupScreens";
+import { useSetupScreens } from "@/hooks/setup.hook";
 import React from "react";
 import { BsFillPeopleFill } from "react-icons/bs";
 
@@ -24,12 +24,12 @@ export default function DataPrivacy() {
         </div>
 
         <div className="pt-6 flex flex-col gap-6">
-          <Text variant={"footnote"} foreground={"muted"} alignment={"left"}>
+          <Text variant={"body"} foreground={"muted"} alignment={"left"}>
             This icon appears when an Apple feature asks to use your personal
             information.
           </Text>
 
-          <Text variant={"footnote"} foreground={"muted"} alignment={"left"}>
+          <Text variant={"body"} foreground={"muted"} alignment={"left"}>
             You {"won't"} see this with every feature since Apple collects this
             information
             <br /> only when needed to enable features, secure our services, or
@@ -37,7 +37,7 @@ export default function DataPrivacy() {
             <br /> your experience.
           </Text>
 
-          <Text variant={"footnote"} foreground={"muted"} alignment={"left"}>
+          <Text variant={"body"} foreground={"muted"} alignment={"left"}>
             Apple believes privacy is a fundamental human right, so every Apple
             <br />
             product is designed to minimize the collection and use of your data,

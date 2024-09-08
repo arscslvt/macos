@@ -37,7 +37,7 @@ const initialSettingsContext: SettingsContext = {
   setSettings: () => {},
 };
 
-const SettingsContext = React.createContext<SettingsContext>(
+export const SettingsContext = React.createContext<SettingsContext>(
   initialSettingsContext
 );
 
@@ -65,5 +65,3 @@ export default function SettingsProvider({ children }: SettingsProviderProps) {
     </SettingsContext.Provider>
   );
 }
-
-export const useSettings = () => React.useContext(SettingsContext);

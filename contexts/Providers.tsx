@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import SystemProvider from "./useSystem";
-import SettingsProvider from "./useSettings";
+import SystemProvider from "./system.context";
+import SettingsProvider from "./settings.context";
 
 export default function Providers({
   children,

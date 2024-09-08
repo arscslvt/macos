@@ -1,11 +1,11 @@
 "use client";
 
-import { useSettings } from "@/contexts/useSettings";
 import { IWallpaper } from "@/types/settings/wallpaper";
 import Image from "next/image";
 import React, { useEffect } from "react";
 
 import DefaultSonomaWallpaper from "@/assets/images/backgrounds/macOS Sonoma.jpg";
+import { useSettings } from "@/hooks/settings.hook";
 
 export default function Wallpaper() {
   const { wallpaper } = useSettings();

@@ -19,7 +19,7 @@ const initialSettings: Omit<SystemContext, "setSettings"> = {
   systemName: "System",
 };
 
-const SystemContext = React.createContext<SystemContext>({
+export const SystemContext = React.createContext<SystemContext>({
   setSettings: () => {},
   region: initialSettings.region,
   language: initialSettings.language,
@@ -57,5 +57,3 @@ export default function SystemProvider({ children }: SystemProviderProps) {
     </SystemContext.Provider>
   );
 }
-
-export const useSystem = () => React.useContext(SystemContext);
