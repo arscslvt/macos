@@ -18,7 +18,9 @@ export default function DataPrivacy() {
       <div className="w-full flex flex-col flex-1 items-center justify-center py-8 px-[16%]">
         <div className="flex flex-col items-center gap-4">
           <BsFillPeopleFill className="w-20 h-20 text-accent" strokeWidth={0} />
-          <Text variant={"title1"}>Data & Privacy</Text>
+          <Text variant={"title1"} weight={"emphasized"}>
+            Data & Privacy
+          </Text>
         </div>
 
         <div className="pt-6 flex flex-col gap-6">
@@ -50,10 +52,18 @@ export default function DataPrivacy() {
       </div>
 
       <div className="px-4 py-3 border-t flex gap-2 justify-end">
-        <Button onClick={() => handleScreenNavigation({ action: "previous" })}>
+        <Button
+          variant={"default"}
+          tint={"secondary"}
+          onClick={() => handleScreenNavigation({ action: "previous" })}
+        >
           Back
         </Button>
-        <Button onClick={() => handleScreenNavigation({ action: "next" })}>
+        <Button
+          variant={"default"}
+          tint={"secondary"}
+          onClick={() => handleScreenNavigation({ action: "next" })}
+        >
           Continue
         </Button>
       </div>

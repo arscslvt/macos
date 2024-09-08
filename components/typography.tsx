@@ -3,25 +3,29 @@ import { VariantProps, cva, cx } from "class-variance-authority";
 const typographyVariant = cva("", {
   variants: {
     variant: {
-      largeTitle: "text-[34px] font-bold leading-[41px]",
-      title1: "text-[28px] font-[600] leading-[34px]",
-      title2: "text-[22px] font-[600] leading-[28px]",
-      title3: "text-[20px] font-[600] leading-[25px]",
+      largeTitle: "text-[34px] leading-[41px]",
+      title1: "text-[28px] leading-[34px]",
+      title2: "text-[22px] leading-[28px]",
+      title3: "text-[20px] leading-[25px]",
 
-      headline: "text-[17px] font-[500] leading-[22px]",
-      subheadline: "text-[15px] font-[500] leading-[20px]",
+      headline: "text-[17px] font-semibold leading-[22px]",
+      subheadline: "text-[15px] leading-[16px]",
 
-      body: "text-[15px] font-[400] leading-[22px]",
-      callout: "text-[14px] font-[400] leading-[21px]",
-      footnote: "text-[13px] font-[400] leading-[18px]",
+      body: "text-[15px] leading-[22px]",
+      callout: "text-[14px] leading-[21px]",
+      footnote: "text-[13px] leading-[18px]",
 
-      caption1: "text-[12px] font-[400] leading-[16px]",
-      caption2: "text-[11px] font-[400] leading-[13px]",
+      caption1: "text-[12px] leading-[16px]",
+      caption2: "text-[11px] leading-[13px]",
+    },
+
+    weight: {
+      emphasized: "!font-bold",
     },
 
     foreground: {
       default: "text-foreground",
-      muted: "text-foreground-muted",
+      muted: "text-muted-foreground",
     },
 
     alignment: {
@@ -40,11 +44,12 @@ const typographyVariant = cva("", {
 interface TypographyProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof typographyVariant> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function Text({
   variant,
+  weight,
   foreground,
   alignment,
   children,
@@ -54,7 +59,7 @@ export default function Text({
   return (
     <span
       className={cx(
-        typographyVariant({ variant, foreground, alignment }),
+        typographyVariant({ variant, weight, foreground, alignment }),
         "select-none pointer-events-none",
         className
       )}

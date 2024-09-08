@@ -2,6 +2,7 @@
 
 import { cx } from "class-variance-authority";
 import React from "react";
+import { Input } from "./input";
 
 interface ListSelectorProps {
   children: React.ReactElement<ListSelectorItemProps>[];
@@ -65,11 +66,12 @@ export default function ListSelector({
       >
         {isSearchable && (
           <div className="h-20 sticky top-0 z-20" role="listitem">
-            <input
+            <Input
               type="text"
+              variant={"ghost"}
               name="search-items"
               className={cx(
-                "w-full h-full text-sm px-1.5 outline-none border-b border-gray-200 placeholder:text-foreground-muted",
+                "w-full rounded-none border-b",
                 isSearchable.textAlign === "center" && "text-center",
                 isSearchable.textAlign === "right" && "text-right"
               )}
@@ -77,6 +79,8 @@ export default function ListSelector({
               value={search}
               onInput={(text) => setSearch(text.currentTarget.value)}
               ref={inputRef}
+              autoFocus
+              autoComplete="off"
             />
           </div>
         )}
@@ -131,7 +135,7 @@ export const ListSelectorItem = ({
         <div
           className={cx(
             "flex items-center gap-2",
-            selected ? "text-white" : "text-foreground-muted"
+            selected ? "text-white" : "text-muted-foreground"
           )}
         >
           {trailing}

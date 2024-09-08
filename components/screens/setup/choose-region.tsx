@@ -38,7 +38,9 @@ export default function SetupChooseRegionScreen() {
             className="w-20 h-20 text-accent"
             strokeWidth={1.2}
           />
-          <Text variant={"title1"}>Select Your Country or Region</Text>
+          <Text variant={"title1"} weight={"emphasized"}>
+            Select Your Country or Region
+          </Text>
         </div>
 
         <div className="pt-8 pb-4">
@@ -59,7 +61,12 @@ export default function SetupChooseRegionScreen() {
       </div>
 
       <div className="px-4 py-3 border-t flex justify-end">
-        <Button disabled={!region} onClick={handleContinue}>
+        <Button
+          variant={"default"}
+          tint={"secondary"}
+          disabled={!region}
+          onClick={handleContinue}
+        >
           Continue
         </Button>
       </div>

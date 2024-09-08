@@ -3,6 +3,7 @@ import React from "react";
 export interface Screen {
   key: string;
   element: React.ReactElement;
+  props?: Record<string, any>;
 }
 
 export interface ScreenNavigationHandler {

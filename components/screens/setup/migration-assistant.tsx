@@ -24,7 +24,9 @@ export default function MigrationAssistant() {
             className="w-20 h-20 text-accent"
             strokeWidth={0}
           />
-          <Text variant={"title1"}>Migration Assistant</Text>
+          <Text variant={"title1"} weight={"emphasized"}>
+            Migration Assistant
+          </Text>
         </div>
 
         <div className="pt-6 pb-8 flex-1 flex flex-col gap-8">
@@ -64,12 +66,16 @@ export default function MigrationAssistant() {
         </Button>
         <div className="flex gap-2">
           <Button
+            variant={"default"}
+            tint={"secondary"}
             onClick={() => handleScreenNavigation({ action: "previous" })}
           >
             Back
           </Button>
           <Button
             disabled
+            variant={"default"}
+            tint={"secondary"}
             onClick={() => handleScreenNavigation({ action: "next" })}
           >
             Continue

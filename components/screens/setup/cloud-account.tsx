@@ -21,7 +21,9 @@ export default function CloudAccount() {
       <form className="w-full flex flex-col flex-1 items-center py-8 px-[16%] gap-6">
         <div className="flex flex-col items-center gap-4">
           <HiMiniCloud className="w-20 h-20 text-accent" strokeWidth={0} />
-          <Text variant={"title1"}>Sign In with Your Cloud ID</Text>
+          <Text variant={"title1"} weight={"emphasized"}>
+            Sign In with Your Cloud ID
+          </Text>
         </div>
 
         <Text variant={"footnote"} foreground={"muted"} alignment={"center"}>
@@ -33,11 +35,20 @@ export default function CloudAccount() {
             <Text variant={"body"} className="mr-2">
               Cloud ID
             </Text>
-            <Input type="email" placeholder="E-mail" className="w-60" />
+            <Input
+              type="email"
+              variant={"default"}
+              placeholder="E-mail"
+              className="w-60"
+            />
           </span>
 
           <div className="flex flex-col">
-            <Button variant={"text"} type="button">
+            <Button
+              variant={"text"}
+              type="button"
+              onClick={() => handleScreenNavigation({ action: "next" })}
+            >
               Create new Cloud ID
             </Button>
             <Button variant={"text"} type="button">
@@ -59,6 +70,8 @@ export default function CloudAccount() {
         </Button>
         <div className="flex gap-2">
           <Button
+            variant={"default"}
+            tint={"secondary"}
             onClick={() =>
               handleScreenNavigation({
                 action: "page",
@@ -69,8 +82,11 @@ export default function CloudAccount() {
             Back
           </Button>
           <Button
-            disabled
-            onClick={() => handleScreenNavigation({ action: "next" })}
+            variant={"default"}
+            tint={"secondary"}
+            onClick={() =>
+              handleScreenNavigation({ action: "page", id: "cloud-otp" })
+            }
           >
             Continue
           </Button>

@@ -127,7 +127,7 @@ export const ToolbarItem = ({
                   <div className="flex-1">{item.label}</div>
                   <div className="flex gap-2">
                     {item.shortcut && (
-                      <span className="text-sm text-foreground-muted group-hover:text-white">
+                      <span className="text-sm text-muted-foreground group-hover:text-white">
                         {item.shortcut}
                       </span>
                     )}

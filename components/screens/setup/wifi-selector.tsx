@@ -74,7 +74,9 @@ export default function SetupWifiSelector() {
       <div className="w-full flex flex-col flex-1 items-center justify-center py-8 px-[16%]">
         <div className="flex flex-col items-center gap-4">
           <IoIosWifi className="w-20 h-20 text-accent" strokeWidth={0} />
-          <Text variant={"title1"}>Select Your Wi-FI Network</Text>
+          <Text variant={"title1"} weight={"emphasized"}>
+            Select Your Wi-FI Network
+          </Text>
         </div>
 
         <div className="py-4">
@@ -120,12 +122,18 @@ export default function SetupWifiSelector() {
       </div>
 
       <div className="px-4 py-3 border-t flex gap-2 justify-end">
-        <Button onClick={() => handleScreenNavigation({ action: "previous" })}>
+        <Button
+          onClick={() => handleScreenNavigation({ action: "previous" })}
+          variant={"default"}
+          tint={"secondary"}
+        >
           Back
         </Button>
         <Button
           onClick={handleContinue}
           disabled={selectedNetwork?.password ? true : false}
+          variant={"default"}
+          tint={"secondary"}
         >
           Connect and Continue
         </Button>

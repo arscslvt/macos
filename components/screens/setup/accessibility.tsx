@@ -28,7 +28,9 @@ export default function SetupAccessibilityScreen() {
       <div className="w-full flex flex-col flex-1 items-center justify-center py-8 px-[16%]">
         <div className="flex flex-col items-center gap-4">
           <RxAccessibility className="w-20 h-20 text-accent" strokeWidth={0} />
-          <Text variant={"title1"}>Accessibility</Text>
+          <Text variant={"title1"} weight={"emphasized"}>
+            Accessibility
+          </Text>
         </div>
 
         <div className="py-4 pb-8 flex flex-col items-center w-full">
@@ -41,7 +43,11 @@ export default function SetupAccessibilityScreen() {
         </div>
 
         <div className="flex items-center gap-4  pb-16">
-          <Button className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-foreground-muted">
+          <Button
+            variant={"default"}
+            tint={"secondary"}
+            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+          >
             <div className="w-12 h-12 flex items-center justify-center">
               <LuEye className="w-12 h-12" strokeWidth={1.3} />
             </div>
@@ -51,7 +57,11 @@ export default function SetupAccessibilityScreen() {
             </Text>
           </Button>
 
-          <Button className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-foreground-muted">
+          <Button
+            variant={"default"}
+            tint={"secondary"}
+            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+          >
             <div className="w-12 h-12 flex items-center justify-center">
               <PiHandPointingLight
                 className="w-10 h-10 -rotate-12"
@@ -64,7 +74,11 @@ export default function SetupAccessibilityScreen() {
             </Text>
           </Button>
 
-          <Button className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-foreground-muted">
+          <Button
+            variant={"default"}
+            tint={"secondary"}
+            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+          >
             <div className="w-12 h-12 flex items-center justify-center">
               <BsEar className="w-8 h-8 -rotate-12" strokeWidth={0.1} />
             </div>
@@ -74,7 +88,11 @@ export default function SetupAccessibilityScreen() {
             </Text>
           </Button>
 
-          <Button className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-foreground-muted">
+          <Button
+            variant={"default"}
+            tint={"secondary"}
+            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+          >
             <div className="w-12 h-12 flex items-center justify-center">
               <PiBrain className="w-10 h-10" strokeWidth={0} />
             </div>
@@ -87,10 +105,16 @@ export default function SetupAccessibilityScreen() {
       </div>
 
       <div className="px-4 py-3 border-t flex gap-2 justify-end">
-        <Button onClick={() => handleScreenNavigation({ action: "previous" })}>
+        <Button
+          variant={"default"}
+          tint={"secondary"}
+          onClick={() => handleScreenNavigation({ action: "previous" })}
+        >
           Back
         </Button>
-        <Button onClick={handleContinue}>Not Now</Button>
+        <Button variant={"default"} tint={"secondary"} onClick={handleContinue}>
+          Not Now
+        </Button>
       </div>
     </Window>
   );

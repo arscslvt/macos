@@ -16,6 +16,7 @@ import {
   ScreensContext,
   SetupScreensContext,
 } from "@/hooks/useSetupScreens";
+import CloudAccountCreation from "@/components/screens/setup/cloud-account-creation";
 
 export default function SetupPage() {
   const screens: Screen[] = useMemo(
@@ -26,6 +27,7 @@ export default function SetupPage() {
       { key: "data-privacy", element: <DataPrivacy /> },
       { key: "migration-assistant", element: <MigrationAssistant /> },
       { key: "cloud-account", element: <CloudAccount /> },
+      { key: "cloud-account-creation", element: <CloudAccountCreation /> },
     ],
     []
   );

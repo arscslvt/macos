@@ -5,8 +5,15 @@ const buttonVariants = cva("text-sm select-none", {
   variants: {
     variant: {
       default:
-        "bg-white text-foreground rounded-md border border-gray-200 shadow-sm active:shadow-inner active:bg-gray-50 disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none",
-      text: "text-accent hover:brightness-75",
+        "rounded-md border shadow-sm disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none",
+      text: "!text-accent !bg-transparent hover:brightness-75",
+    },
+
+    tint: {
+      primary:
+        "bg-accent text-accent-foreground shadow-accent/30 active:bg-accent/90 border-accent/80",
+      secondary:
+        "bg-white text-foreground active:bg-gray-50 disabled:opacity-70 border-gray-200 active:shadow-inner active:bg-gray-50 ",
     },
 
     size: {
@@ -19,6 +26,7 @@ const buttonVariants = cva("text-sm select-none", {
   defaultVariants: {
     variant: "default",
     size: "medium",
+    tint: "primary",
   },
 });
 
@@ -34,6 +42,7 @@ export default function Button({
   children,
   className,
   variant,
+  tint,
   size,
   type = "button",
   ...props
@@ -41,7 +50,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className={cx(buttonVariants({ variant, size }), className)}
+      className={cx(buttonVariants({ variant, tint, size }), className)}
       {...props}
     >
       {children}
