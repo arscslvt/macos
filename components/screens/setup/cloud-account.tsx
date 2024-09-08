@@ -7,9 +7,12 @@ import Button from "@/components/ui/button";
 import { HiMiniCloud } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
 import { useSetupScreens } from "@/hooks/setup.hook";
+import { useAccount } from "@/hooks/account.hook";
 
 export default function CloudAccount() {
   const { handleScreenNavigation } = useSetupScreens();
+
+  const { user } = useAccount();
 
   return (
     <Window
@@ -42,6 +45,37 @@ export default function CloudAccount() {
               className="w-60"
             />
           </span>
+
+          {user && (
+            <div className="flex flex-col gap-2 my-4">
+              <Text
+                variant={"body"}
+                weight={"emphasized"}
+                foreground={"muted"}
+                alignment={"left"}
+              >
+                Continue with
+              </Text>
+              <Button
+                className="flex gap-3 items-center py-2 h-max"
+                tint={"secondary"}
+              >
+                <div className="w-12 h-12 rounded-full bg-zinc-300" />
+                <div className="flex flex-col">
+                  <Text alignment={"left"}>
+                    {user?.firstName} {user?.lastName}
+                  </Text>
+                  <Text
+                    variant={"body"}
+                    alignment={"left"}
+                    foreground={"muted"}
+                  >
+                    {user?.email}
+                  </Text>
+                </div>
+              </Button>
+            </div>
+          )}
 
           <div className="flex flex-col">
             <Button

@@ -1,11 +1,12 @@
 import { StaticImageData } from "next/image";
 
 interface IUser {
-  name: string;
-  email: string;
+  firstName: string;
+  lastName: string;
 
-  password?: string;
-  avatar: StaticImageData;
+  email?: string;
+
+  avatar?: StaticImageData;
 }
 
 export type { IUser };
