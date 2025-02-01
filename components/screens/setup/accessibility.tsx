@@ -35,8 +35,8 @@ export default function SetupAccessibilityScreen() {
 
         <div className="py-4 pb-8 flex flex-col items-center w-full">
           <Text variant={"body"} foreground={"muted"} alignment={"center"}>
-            Accessibilty features adapt your Mac to your individial needs. You
-            can turn them on now to help you finish setting up, and further
+            Accessibilty features adapt your computer to your individial needs.
+            You can turn them on now to help you finish setting up, and further
             customize them later in System Preferences. See {"what's"} available
             in each of the categories below.
           </Text>
@@ -46,7 +46,7 @@ export default function SetupAccessibilityScreen() {
           <Button
             variant={"default"}
             tint={"secondary"}
-            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+            className="h-32! w-32! flex flex-col gap-3 items-center justify-center text-muted-foreground"
           >
             <div className="w-12 h-12 flex items-center justify-center">
               <LuEye className="w-12 h-12" strokeWidth={1.3} />
@@ -60,7 +60,7 @@ export default function SetupAccessibilityScreen() {
           <Button
             variant={"default"}
             tint={"secondary"}
-            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+            className="h-32! w-32! flex flex-col gap-3 items-center justify-center text-muted-foreground"
           >
             <div className="w-12 h-12 flex items-center justify-center">
               <PiHandPointingLight
@@ -77,7 +77,7 @@ export default function SetupAccessibilityScreen() {
           <Button
             variant={"default"}
             tint={"secondary"}
-            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+            className="h-32! w-32! flex flex-col gap-3 items-center justify-center text-muted-foreground"
           >
             <div className="w-12 h-12 flex items-center justify-center">
               <BsEar className="w-8 h-8 -rotate-12" strokeWidth={0.1} />
@@ -91,7 +91,7 @@ export default function SetupAccessibilityScreen() {
           <Button
             variant={"default"}
             tint={"secondary"}
-            className="!h-32 !w-32 flex flex-col gap-3 items-center justify-center text-muted-foreground"
+            className="h-32! w-32! flex flex-col gap-3 items-center justify-center text-muted-foreground"
           >
             <div className="w-12 h-12 flex items-center justify-center">
               <PiBrain className="w-10 h-10" strokeWidth={0} />

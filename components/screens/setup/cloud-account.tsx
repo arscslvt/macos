@@ -25,7 +25,7 @@ export default function CloudAccount() {
         <div className="flex flex-col items-center gap-4">
           <HiMiniCloud className="w-20 h-20 text-accent" strokeWidth={0} />
           <Text variant={"title1"} weight={"emphasized"}>
-            Sign In with Your Cloud ID
+            Sign In with Your Sierra ID
           </Text>
         </div>
 
@@ -36,7 +36,7 @@ export default function CloudAccount() {
         <div className="flex flex-col gap-4 items-center">
           <span>
             <Text variant={"body"} className="mr-2">
-              Cloud ID
+              Sierra ID
             </Text>
             <Input
               type="email"
@@ -83,13 +83,13 @@ export default function CloudAccount() {
               type="button"
               onClick={() => handleScreenNavigation({ action: "next" })}
             >
-              Create new Cloud ID
+              Create new Sierra ID
             </Button>
             <Button variant={"text"} type="button">
-              Forgot Cloud ID or password?
+              Forgot Sierra ID or password?
             </Button>
             <Button variant={"text"} type="button">
-              Use different Cloud IDs for Cloud and Store media purchases?
+              Use different Sierra IDs for Cloud and Store media purchases?
             </Button>
           </div>
         </div>

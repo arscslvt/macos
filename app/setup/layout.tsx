@@ -14,7 +14,7 @@ import { MdOutlineWifi } from "react-icons/md";
 
 export const metadata: Metadata = {
   title: "Setup",
-  description: "Setup your macOS web environment.",
+  description: "Setup your Sierra web environment.",
 };
 
 export default function SetupLayout({
@@ -32,7 +32,7 @@ export default function SetupLayout({
             <ToolbarItem
               items={[
                 {
-                  label: "About This Mac",
+                  label: "About This computer",
                 },
                 "separator",
                 {

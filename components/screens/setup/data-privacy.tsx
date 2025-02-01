@@ -25,20 +25,21 @@ export default function DataPrivacy() {
 
         <div className="pt-6 flex flex-col gap-6">
           <Text variant={"body"} foreground={"muted"} alignment={"left"}>
-            This icon appears when an Apple feature asks to use your personal
-            information.
+            This icon appears when a Sierra Corp. feature asks to use your
+            personal information.
           </Text>
 
           <Text variant={"body"} foreground={"muted"} alignment={"left"}>
-            You {"won't"} see this with every feature since Apple collects this
-            information
+            You {"won't"} see this with every feature since Sierra Corp.
+            collects this information
             <br /> only when needed to enable features, secure our services, or
             personalize
             <br /> your experience.
           </Text>
 
           <Text variant={"body"} foreground={"muted"} alignment={"left"}>
-            Apple believes privacy is a fundamental human right, so every Apple
+            Sierra Corp. believes privacy is a fundamental human right, so every
+            Sierra Corp.
             <br />
             product is designed to minimize the collection and use of your data,
             use

@@ -8,8 +8,8 @@ const typographyVariant = cva("", {
       title2: "text-[17px] leading-[22px]",
       title3: "text-[15px] leading-[20px]",
 
-      headline: "text-[13px] font-semibold leading-[16px]",
-      subheadline: "text-[11px] leading-[14px]",
+      headline: "text-[15px] font-semibold leading-[16px]",
+      subheadline: "text-[13px] leading-[14px]",
 
       body: "text-[14px] leading-[16px]",
       callout: "text-[12px] leading-[15px]",
@@ -20,7 +20,7 @@ const typographyVariant = cva("", {
     },
 
     weight: {
-      emphasized: "!font-bold",
+      emphasized: "font-bold!",
     },
 
     foreground: {

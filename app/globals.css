@@ -1,7 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: SF Pro Display, ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  --radius: 0.5rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-accent: hsl(38 92% 50%);
+  --color-accent-foreground: hsl(0 0%, 100%);
+
+  --color-accent-muted: hsl(38 92% 85%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-foreground: hsl(240 10% 3.9%);
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-background: hsl(0 0% 100%);
+  --color-background-muted: hsl(240 4.8% 95.9%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(240 10% 3.9%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(240 10% 3.9%);
+
+  --color-primary: hsl(240 5.9% 10%);
+  --color-primary-foreground: hsl(0 0% 98%);
+
+  --color-secondary: hsl(240 4.8% 95.9%);
+  --color-secondary-foreground: hsl(240 5.9% 10%);
+
+  --color-muted: hsl(240 4.8% 95.9%);
+  --color-muted-foreground: hsl(240 3.8% 46.1%);
+
+  --color-border: hsl(240 4% 85%);
+  --color-input: hsl(240 5.9% 90%);
+  --color-ring: hsl(240 10% 3.9%);
+
+  --color-chart-1: hsl(12 76% 61%);
+  --color-chart-2: hsl(173 58% 39%);
+  --color-chart-3: hsl(197 37% 24%);
+  --color-chart-4: hsl(43 74% 66%);
+  --color-chart-5: hsl(27 87% 67%);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility remove-appearance {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  &input::-webkit-outer-spin-button {
+    appearance: none !important;
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  & input::-webkit-inner-spin-button {
+    appearance: none !important;
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
 
 @layer base {
   @font-face {
@@ -27,35 +119,10 @@
     font-display: swap;
     src: url(/fonts/SFProDisplayBold.otf) format("otf");
   }
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 211 100% 50%;
-    --accent-foreground: 0 0%, 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    /* --border: 240 5.9% 90%; */
-    --border: 240 4% 85%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
+}
+/* 
+.dark {
+  @theme {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
@@ -81,27 +148,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@layer components {
-  .remove-appearance {
-    appearance: none !important;
-    -webkit-appearance: none !important;
-  }
-
-  input.remove-appearance::-webkit-outer-spin-button,
-  input.remove-appearance::-webkit-inner-spin-button {
-    appearance: none !important;
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
+} */
 
 @layer base {
   * {

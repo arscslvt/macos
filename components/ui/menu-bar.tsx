@@ -25,7 +25,7 @@ export const MenuBarTrigger = ({
     <Menubar.Trigger
       {...props}
       className={cx(
-        "flex items-center px-2.5 outline-none cursor-default data-[state=open]:bg-opacity-20 rounded-[4px]",
+        "flex items-center px-2.5 outline-hidden cursor-default data-[state=open]:bg-opacity-20 rounded-[4px]",
         props.className
       )}
     >
@@ -41,7 +41,7 @@ export const MenuBarContent = ({
   return (
     <Menubar.Content
       {...props}
-      className="z-[99] mt-1 bg-gray-100 p-1 bg-opacity-80 backdrop-blur-xl rounded ring-[0.5px] ring-gray-300 shadow-xl text-foreground select-none"
+      className="z-99 mt-1 bg-gray-100 p-1 bg-opacity-80 backdrop-blur-xl rounded ring-[0.5px] ring-gray-300 shadow-xl text-foreground select-none"
     >
       {children}
     </Menubar.Content>
@@ -67,7 +67,7 @@ export const MenuBarItem = ({
     <Menubar.Item
       {...props}
       className={cx(
-        "px-3 rounded-[3px] text-[13px] h-5 hover:bg-accent hover:text-white outline-none ring-0 flex items-center",
+        "px-3 rounded-[3px] text-[13px] h-5 hover:bg-accent hover:text-white outline-hidden ring-0 flex items-center",
         props.className
       )}
     >

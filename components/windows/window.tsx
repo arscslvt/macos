@@ -73,11 +73,11 @@ const controlVariants = cva(
     variants: {
       control: {
         close:
-          "group-hover:bg-red-400 group-hover:ring-red-500 active:!bg-red-500 text-red-800",
+          "group-hover:bg-red-400 group-hover:ring-red-500 active:bg-red-500! text-red-800",
         minimize:
-          "group-hover:bg-yellow-400 group-hover:ring-yellow-500 active:!bg-yellow-500 text-yellow-800",
+          "group-hover:bg-yellow-400 group-hover:ring-yellow-500 active:bg-yellow-500! text-yellow-800",
         maximize:
-          "group-hover:bg-green-400 group-hover:ring-green-500 active:!bg-green-500 text-green-800",
+          "group-hover:bg-green-400 group-hover:ring-green-500 active:bg-green-500! text-green-800",
       },
     },
     defaultVariants: {

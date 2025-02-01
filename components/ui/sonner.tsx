@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { Toaster as Sonner } from "sonner";
 import Text from "../typography";
-import React, { useMemo } from "react";
+import React from "react";
 import * as datefns from "date-fns";
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
@@ -16,12 +16,15 @@ const Toaster = ({ ...props }: ToasterProps) => {
       theme={theme as ToasterProps["theme"]}
       className="toaster group"
       position="top-right"
+      style={{
+        top: "3rem",
+      }}
       expand
       toastOptions={{
         classNames: {
           icon: "w-12 h-12",
           toast:
-            "group toast p-3 !rounded-xl group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+            "group toast p-3 rounded-xl! group-[.toaster]:bg-background/80 group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
           title: "group-[.toast]:text-foreground leading-tight",
           description: "group-[.toast]:text-muted-foreground",
           actionButton:

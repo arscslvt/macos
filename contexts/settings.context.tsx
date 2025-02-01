@@ -5,7 +5,7 @@ import { IDesktopWallpaper } from "@/types/settings/wallpaper";
 import { IWifi } from "@/types/settings/wifi";
 import React from "react";
 
-import DefaultSonomaWallpaper from "@/assets/images/backgrounds/macOS Sonoma.jpg";
+import DefaultWallpaper from "@/assets/images/backgrounds/amber-orbits.jpg";
 
 interface SettingsItems {
   wifi?: IWifi;
@@ -24,8 +24,8 @@ const initialSettings: SettingsItems = {
   appearance: "auto",
   wallpaper: {
     wallpaper: {
-      name: "macOS Sonoma",
-      path: DefaultSonomaWallpaper,
+      name: "Sierra Sonoma",
+      path: DefaultWallpaper,
       theme: "light",
     },
     isDynamic: false,

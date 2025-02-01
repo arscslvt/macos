@@ -31,10 +31,10 @@ export default function MigrationAssistant() {
 
         <div className="pt-6 pb-8 flex-1 flex flex-col gap-8">
           <Text variant={"body"} foreground={"muted"} alignment={"center"}>
-            If you have information on another macOS Emulator installed on other
-            browsers, you can <br />
+            If you have information on another Sierra Emulator installed on
+            other browsers, you can <br />
             transfer it to this one. You can also transfer information from your
-            xCloud.
+            Sierra Cloud.
           </Text>
 
           <div className="flex flex-col items-center gap-4">
@@ -43,9 +43,9 @@ export default function MigrationAssistant() {
             </Text>
             <RadioGroup direction="vertical" defaultValue="emulator">
               <RadioGroupItem value="emulator">
-                From a macOS Emulator
+                From a Sierra Emulator
               </RadioGroupItem>
-              <RadioGroupItem value="xcloud">From xCloud</RadioGroupItem>
+              <RadioGroupItem value="xcloud">From Sierra Cloud</RadioGroupItem>
             </RadioGroup>
           </div>
         </div>

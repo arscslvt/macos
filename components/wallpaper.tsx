@@ -4,7 +4,7 @@ import { IWallpaper } from "@/types/settings/wallpaper";
 import Image from "next/image";
 import React, { useEffect } from "react";
 
-import DefaultSonomaWallpaper from "@/assets/images/backgrounds/macOS Sonoma.jpg";
+import DefaultWallpaper from "@/assets/images/backgrounds/amber-orbits.jpg";
 import { useSettings } from "@/hooks/settings.hook";
 
 export default function Wallpaper() {
@@ -23,11 +23,11 @@ export default function Wallpaper() {
   }, [wallpaper]);
 
   return (
-    <div className="absolute top-0 left-0 w-dvw h-dvh z-0">
+    <div className="fixed top-0 left-0 w-dvw h-dvh z-0">
       <Image
         quality={100}
-        src={selectedWallpaper?.path || DefaultSonomaWallpaper}
-        alt="macOS Sonoma Wallpaper"
+        src={selectedWallpaper?.path || DefaultWallpaper}
+        alt="Sierra Wallpaper"
         className="w-full h-full object-cover select-none pointer-events-none"
       />
     </div>

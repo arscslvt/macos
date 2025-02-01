@@ -5,8 +5,8 @@ const buttonVariants = cva("text-sm select-none", {
   variants: {
     variant: {
       default:
-        "rounded-md border shadow-sm disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none",
-      text: "!text-accent !bg-transparent hover:brightness-75",
+        "rounded-md border shadow-xs disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none",
+      text: "text-accent! bg-transparent! hover:brightness-75",
     },
 
     tint: {

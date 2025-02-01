@@ -17,6 +17,9 @@ import {
   SetupScreen,
   SetupScreensContext,
 } from "@/contexts/setup.context";
+import Services from "@/components/screens/setup/services";
+import Button from "@/components/ui/button";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 export default function SetupPage() {
   const screens: SetupScreen[] = useMemo(
@@ -28,6 +31,7 @@ export default function SetupPage() {
       { key: "migration-assistant", element: <MigrationAssistant /> },
       { key: "cloud-account", element: <CloudAccount /> },
       { key: "cloud-account-creation", element: <CloudAccountCreation /> },
+      { key: "services", element: <Services /> },
     ],
     []
   );
@@ -67,6 +71,21 @@ export default function SetupPage() {
           key: screens[currentScreen].key,
         })}
       </motion.div>
+
+      {process.env.NEXT_PUBLIC_ENV === "dev" && (
+        <div className="absolute bottom-0 left-0 w-dvw pb-4 flex items-center gap-2 justify-center pointer-events-none">
+          <div className="flex justify-center items-center gap-2 pointer-events-auto">
+            <Button
+              onClick={() => handleScreenNavigation({ action: "previous" })}
+            >
+              <ChevronLeftIcon className="text-background w-5 h-5" />
+            </Button>
+            <Button onClick={() => handleScreenNavigation({ action: "next" })}>
+              <ChevronRightIcon className="text-background w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      )}
     </ScreensContext.Provider>
   );
 }
