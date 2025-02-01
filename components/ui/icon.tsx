@@ -3,7 +3,7 @@ import Image from "next/image";
 import Text from "../typography";
 import { cva, cx, VariantProps } from "class-variance-authority";
 
-import FallbackIcon from "@assets/icons/No App.png";
+import FallbackIcon from "@assets/icons/No_App.png";
 import { AppDetails } from "@/types/app/app.type";
 
 const iconVariants = cva("", {
