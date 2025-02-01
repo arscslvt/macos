@@ -81,7 +81,7 @@ export default function Services() {
             Make This Your New Computer
           </Text>
           <Text variant={"subheadline"} foreground={"muted"} alignment={"left"}>
-            Here's everything set up by default
+            Here&apos;s everything set up by default
           </Text>
         </div>
 
