@@ -70,7 +70,7 @@ export default function CloudAccount() {
                     alignment={"left"}
                     foreground={"muted"}
                   >
-                    {user?.email}
+                    {user?.primaryEmailAddress?.emailAddress}
                   </Text>
                 </div>
               </Button>
