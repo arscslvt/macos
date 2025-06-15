@@ -6,6 +6,7 @@ import { IWifi } from "@/types/settings/wifi";
 import React from "react";
 
 import DefaultWallpaper from "@/assets/images/backgrounds/amber-orbits.jpg";
+import NotReadyScreen from "@/components/screens/comon/not-ready";
 
 interface SettingsItems {
   wifi?: IWifi;

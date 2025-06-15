@@ -58,6 +58,20 @@ export default function ListSelector({
     }
   }, [filteredChildren, listRef, search]);
 
+  React.useEffect(() => {
+    if (!defaultValue) return;
+
+    if (listRef?.current) {
+      const defaultItem = listRef.current.querySelector(
+        `#${defaultValue}`
+      ) as HTMLElement;
+
+      if (defaultItem) {
+        defaultItem.scrollIntoView({ block: "start" });
+      }
+    }
+  }, [defaultValue]);
+
   return (
     <div className="relative">
       <ul

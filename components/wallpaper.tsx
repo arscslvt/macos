@@ -26,6 +26,7 @@ export default function Wallpaper() {
     <div className="fixed top-0 left-0 w-dvw h-dvh z-0">
       <Image
         quality={100}
+        priority
         src={selectedWallpaper?.path || DefaultWallpaper}
         alt="Sierra Wallpaper"
         className="w-full h-full object-cover select-none pointer-events-none"

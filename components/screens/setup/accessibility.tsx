@@ -5,7 +5,6 @@ import { useSetupScreens } from "@/hooks/setup.hook";
 import React from "react";
 import { BsEar } from "react-icons/bs";
 import { LuEye } from "react-icons/lu";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { PiBrain, PiHandPointingLight } from "react-icons/pi";
 import { RxAccessibility } from "react-icons/rx";
 

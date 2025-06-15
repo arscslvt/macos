@@ -30,7 +30,6 @@ export default function Providers({
             <SystemProvider>
               <SettingsProvider>
                 <AppsProvider>
-                  {" "}
                   <Toaster />
                   {children}
                 </AppsProvider>

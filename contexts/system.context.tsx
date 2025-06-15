@@ -1,3 +1,4 @@
+import NotReadyScreen from "@/components/screens/comon/not-ready";
 import { IUser } from "@/types/account/user";
 import countries from "@/utils/countries";
 import languages from "@/utils/languages";
@@ -12,6 +13,8 @@ interface SystemContext {
 
   setSettings: (settings: Partial<Omit<SystemContext, "setSettings">>) => void;
 }
+
+type KeyValueSetttings = Omit<SystemContext, "setSettings">;
 
 const initialSettings: Omit<SystemContext, "setSettings"> = {
   region: countries[0].code,
@@ -32,14 +35,42 @@ interface SystemProviderProps {
 }
 
 export default function SystemProvider({ children }: SystemProviderProps) {
-  const [settings, _setSettings] =
-    React.useState<Omit<SystemContext, "setSettings">>(initialSettings);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [settings, _setSettings] = React.useState<KeyValueSetttings>({});
 
-  const setSettings = (
-    settings: Partial<Omit<SystemContext, "setSettings">>
-  ) => {
-    _setSettings((prev) => ({ ...prev, ...settings }));
+  const setSettings = (settings: Partial<KeyValueSetttings>) => {
+    setSettingsHandler(settings);
   };
+
+  const setSettingsHandler = (newSettings: Partial<KeyValueSetttings>) => {
+    console.log("Requested settings update.");
+
+    const updatedSettings = { ...settings, ...newSettings };
+    _setSettings(updatedSettings);
+
+    saveSettings(updatedSettings);
+  };
+
+  const saveSettings = (settings: KeyValueSetttings) => {
+    // Save locally
+    localStorage.setItem("system-settings", JSON.stringify(settings));
+
+    // TODO: Try to save to the database if the user have an account
+
+    console.log("⚙️ System Settings changed: ", settings);
+  };
+
+  const loadSettings = React.useCallback(() => {
+    const storedSettings = localStorage.getItem("system-settings");
+    setSettings(storedSettings ? JSON.parse(storedSettings) : initialSettings);
+  }, []);
+
+  React.useEffect(() => {
+    if (isLoading) {
+      loadSettings();
+      setIsLoading(false);
+    }
+  }, [isLoading]);
 
   return (
     <SystemContext.Provider
@@ -53,7 +84,14 @@ export default function SystemProvider({ children }: SystemProviderProps) {
         userName: settings.userName,
       }}
     >
-      {children}
+      {isLoading ? (
+        <NotReadyScreen
+          title="We're settings your preferences..."
+          description="This won't take long."
+        />
+      ) : (
+        children
+      )}
     </SystemContext.Provider>
   );
 }

@@ -4,63 +4,80 @@ import ListSelector, { ListSelectorItem } from "@/components/ui/list-selector";
 import Window from "@/components/windows/window";
 import { useSettings } from "@/hooks/settings.hook";
 import { useSetupScreens } from "@/hooks/setup.hook";
+import { useSystem } from "@/hooks/system.hook";
 import { IWifi, generateRandomIP } from "@/types/settings/wifi";
-import React from "react";
+import React, { useMemo } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
 import { IoIosWifi } from "react-icons/io";
 
 export default function SetupWifiSelector() {
-  const networks: IWifi[] = [
-    {
-      ip: generateRandomIP(),
-      ssid: "Alice's iPhone",
-      isHotspot: true,
-      password: "password",
-    },
-    {
-      ip: generateRandomIP(),
-      ssid: "Pedro's Home Network",
-      isHotspot: false,
-      password: "password",
-    },
-    {
-      ip: generateRandomIP(),
-      ssid: "Free Wi-Fi",
-      isHotspot: false,
-    },
-    {
-      ip: generateRandomIP(),
-      ssid: "Linksys 383 - 5Ghz",
-      isHotspot: false,
-      password: "password",
-    },
-    {
-      ip: generateRandomIP(),
-      ssid: "Salvatore's iPhone",
-      isHotspot: true,
-      password: "password",
-    },
-    {
-      ip: generateRandomIP(),
-      ssid: "OpenNetwork - 2G",
-      isHotspot: false,
-      password: "password",
-    },
-  ];
+  const networks: IWifi[] = useMemo(
+    () => [
+      {
+        ip: "153.58.253.10",
+        ssid: "Alice's iPhone",
+        isHotspot: true,
+        password: "password",
+      },
+      {
+        ip: "1281.1.84.124",
+        ssid: "Pedro's Home Network",
+        isHotspot: false,
+        password: "password",
+      },
+      {
+        ip: "103.125.201.225",
+        ssid: "Free Wi-Fi",
+        isHotspot: false,
+      },
+      {
+        ip: "190.104.78.237",
+        ssid: "Linksys 383 - 5Ghz",
+        isHotspot: false,
+        password: "password",
+      },
+      {
+        ip: "230.53.201.218",
+        ssid: "Salvatore's iPhone",
+        isHotspot: true,
+        password: "password",
+      },
+      {
+        ip: "77.82.247.176",
+        ssid: "OpenNetwork - 2G",
+        isHotspot: false,
+        password: "password",
+      },
+    ],
+    []
+  );
 
-  const { wifi, setSettings } = useSettings();
+  const { wifi, setSettings } = useSystem();
   const [selectedNetwork, setSelectedNetwork] = React.useState<IWifi | null>(
     wifi ?? null
   );
 
   const { handleScreenNavigation } = useSetupScreens();
 
+  const handleNetworkChange = (networkIp: string) => {
+    console.log(networkIp);
+
+    const plainIpString = networkIp.replace("IP_", "").split("_").join(".");
+
+    const foundNetwork = networks.find((n) => n.ip === plainIpString);
+    if (!foundNetwork) return;
+
+    setSelectedNetwork(foundNetwork);
+
+    if (foundNetwork.password) return;
+    setSettings({
+      wifi: foundNetwork,
+    });
+  };
+
   const handleContinue = () => {
     if (!selectedNetwork) return;
 
-    setSettings({
-      wifi: selectedNetwork,
-    });
     handleScreenNavigation({ action: "next" });
   };
 
@@ -82,21 +99,16 @@ export default function SetupWifiSelector() {
         <div className="py-4">
           <ListSelector
             onSelect={(value) => {
-              const network = networks[parseInt(value.split("-")[1])];
-              setSelectedNetwork(network);
+              handleNetworkChange(value);
             }}
             defaultValue={
-              wifi?.ssid
-                ? `network-${networks.findIndex(
-                    (network) => network.ssid === wifi.ssid
-                  )}`
-                : "network-0"
+              (wifi as IWifi) ? `IP_${wifi.ip.split(".").join("_")}` : undefined
             }
           >
             {networks.map((network, i) => (
               <ListSelectorItem
                 key={i}
-                value={`network-${i}`}
+                value={`IP_${network.ip.split(".").join("_")}`}
                 trailing={
                   <>
                     {network.password && <BiSolidLockAlt className="w-4 h-4" />}

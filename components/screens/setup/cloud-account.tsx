@@ -8,6 +8,7 @@ import { HiMiniCloud } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
 import { useSetupScreens } from "@/hooks/setup.hook";
 import { useAccount } from "@/hooks/account.hook";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function CloudAccount() {
   const { handleScreenNavigation } = useSetupScreens();
@@ -60,7 +61,13 @@ export default function CloudAccount() {
                 className="flex gap-3 items-center py-2 h-max"
                 tint={"secondary"}
               >
-                <div className="w-12 h-12 rounded-full bg-zinc-300" />
+                <Avatar>
+                  <AvatarImage
+                    src={user.imageUrl}
+                    alt={`${user.firstName ?? "User"} image`}
+                  />
+                  <AvatarFallback className="bg-zinc-300" />
+                </Avatar>
                 <div className="flex flex-col">
                   <Text alignment={"left"}>
                     {user?.firstName} {user?.lastName}

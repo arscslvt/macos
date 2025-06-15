@@ -1,7 +1,7 @@
 import { VariantProps, cva, cx } from "class-variance-authority";
 import React from "react";
 
-const buttonVariants = cva("text-sm select-none", {
+export const buttonVariants = cva("text-sm select-none", {
   variants: {
     variant: {
       default:
